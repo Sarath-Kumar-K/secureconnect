@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="../static/css/cyber-form.css" />
+    <!-- Your custom CSS file -->
+  </head>
+  <body>
+    <div class="container">
+      <h2>Cyber Form</h2>
+      <form action="/ipdata" method="POST">
+        <div class="form-group">
+            <label for="ip"><i class="fas fa-laptop"></i> IP Address:</label>
+            <input type="text" id="ip" name="IP Address" required>
+        </div>
+        <div class="form-group">
+          <label for="geo_location"
+            ><i class="fas fa-globe"></i> Geolocation:</label
+          >
+          <select id="geo_location" name="Geolocation" required>
+            <option value="">Select IP Country</option>
+            {% for country in countries %}
+            <option value="{{ country }}">{{ country }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="user_agent"
+            ><i class="fas fa-user-secret"></i> User Agent:</label
+          >
+          <select id="user_agent" name="User Agent" required>
+            <option value="">Select User Agent</option>
+            {% for user_agent in user_agents %}
+            <option value="{{ user_agent }}">{{ user_agent }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="session_duration"
+            ><i class="fas fa-stopwatch"></i> Session Duration:</label
+          >
+          <input
+            type="number"
+            id="session_duration"
+            name="Session Duration"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="data_transfer_volume"
+            ><i class="fas fa-chart-line"></i> Data Transfer Volume:</label
+          >
+          <input
+            type="number"
+            id="data_transfer_volume"
+            name="Data Transfer Volume"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="packet_size"
+            ><i class="fas fa-box"></i> Packet Size:</label
+          >
+          <input type="number" id="packet_size" name="Packet Size" required />
+        </div>
+        <div class="form-group">
+          <label for="status_code"
+            ><i class="fas fa-code"></i> Status Code:</label
+          >
+          <select id="status_code" name="Status Code" required>
+            <option value="">Select Status Code</option>
+            {% for status_code in status_codes %}
+            <option value="{{ status_code }}">{{ status_code }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="protocol"
+            ><i class="fas fa-shield-alt"></i> Protocol:</label
+          >
+          <select id="protocol" name="Protocol" required>
+            <option value="">Select Protocol</option>
+            {% for protocol in protocols %}
+            <option value="{{ protocol }}">{{ protocol }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="proxy_check"
+            ><i class="fas fa-check-circle"></i> Proxy Detected:</label
+          >
+          <select id="proxy_check" name="Proxy Detected" required>
+            <option value="">Select yes or No</option>
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select>
+        </div>
+        <button type="submit"><i class="fas fa-save"></i> Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

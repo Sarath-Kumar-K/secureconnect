@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SecureConnect</title>
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to SecureConnect Dashboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#connections">Connections</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="/">Logout VPN</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Connect Server</a>
+                <div class="dropdown-content">
+                  <a href="/employee">Employee Login</a>
+                  <a href="/administrator">Administrator Login</a>
+                  <a href="/test">Server Test</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section id="profile">
+            <h2>Profile</h2>
+            <!-- Profile information goes here -->
+        </section>
+        <section id="connections">
+            <h2>Active Connections</h2>
+            <!-- List of active connections -->
+        </section>
+        <section id="settings">
+            <h2>Settings</h2>
+            <!-- VPN settings/options -->
+            <div class="settings-options">
+                <div class="option">
+                    <h3>Connection Protocol</h3>
+                    <select>
+                        <option value="udp">UDP</option>
+                        <option value="tcp">TCP</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <h3>Encryption</h3>
+                    <select>
+                        <option value="aes">AES-256</option>
+                        <option value="aes-128">AES-128</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <h3>Split Tunneling</h3>
+                    <label>
+                        <input type="checkbox"> Enable Split Tunneling
+                    </label>
+                </div>
+                <!-- Add more options as needed -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SecureConnect. All rights reserved.</p>
+    </footer>
+</body>
+</html>
