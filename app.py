@@ -143,7 +143,7 @@ def predict(form_data):
         return redirect('https://sarath-kumar.vercel.app')
     elif prediction_value == 1:  # Malicious connection
         print("Malicious Ip Detected")
-        return redirect(f'http://localhost:8000/?ip={ip_address}')
+        return redirect(f'http://localhost:8000/login?ip={ip_address}')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
